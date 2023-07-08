@@ -21,7 +21,7 @@ namespace ConsoleApp1
         public static RequestBenefit LoadFromXml(string file)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(RequestBenefit));
-            using (FileStream reader = new FileStream(file, FileMode.OpenOrCreate))
+            using (FileStream reader = new FileStream(file, FileMode.Open))
             {
                 return serializer.Deserialize(reader) as RequestBenefit;
             }
